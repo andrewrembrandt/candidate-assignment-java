@@ -25,7 +25,11 @@ Analyze the data in the two .csv files and implement the model ``Application.jav
 
 Proposal of Java interfaces (Note: Relations are not yet specified, use this interfaces as a starting point)
 
-:bulb: How you can easy correlate the 2 data sets? Use a unique key / id available in both data sets :smirk:
+:bulb: How can you easily correlate the 2 data sets? Use a unique key / id available in both data sets :smirk:
+
+**Answer**
+
+The Gemeindenummer in the postcode data allows the linking between postcode communities and political communities.
 
 ### :memo: Assignment 3
 Implement all the other methods in ``Application.java`` that throw a runtime exception using your model / data structure that you have created in Assignment 1
@@ -35,6 +39,11 @@ Fromat your source code additions according [Google Style Guide for Java](https:
 
 ### :memo: Assignment 5
 When looking at the 2 CSV's, describe some other "interesting" facts you get out of your data set's.
+
+**Answer**
+* A single postcode community can span multiple political communities, and interestingly (unexpectedly) cantons.
+* A unique postcode community (postcode and postcode addition / PLZZ) entry in the CSV can be repeated for providing links to multiple political communities.  
+
 
 ## Hand in the assignment :shipit:
 If you are happy with your solution and all provided tests are passing please create a new pull request. Please put your full name in the PR comment, so we can map it to your application.

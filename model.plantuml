@@ -5,22 +5,40 @@ class PoliticalCommunity [[java:ch.aaap.assignment.model.PoliticalCommunity]] {
 	String name
 	String shortName
 	LocalDate lastUpdate
+	Set<PostalCommunity> postalCommunities
 }
 
 class Canton [[java:ch.aaap.assignment.model.Canton]] {
 	String code
 	String name
+	Set<District> districts
 }
 
 class PostalCommunity [[java:ch.aaap.assignment.model.PostalCommunity]] {
 	String zipCode
 	String zipCodeAddition
 	String name
+	Set<PoliticalCommunity> politicalCommunities
 }
 
 class District [[java:ch.aaap.assignment.model.District]] {
 	String number
 	String name
+	Set<PoliticalCommunity> politicalCommunities
+	Set<PostalCommunity> postalCommunities
 }
+
+Canton "1" *-- "many" District
+District "1" *-- "many" PoliticalCommunity
+District "1" *-- "many" PostalCommunity
+note on link
+This relation isn't required for the tests,
+but is useful for other potential use-
+cases; and in terms of modelling the data
+end note
+
+PoliticalCommunity "many" *--* "many" PostalCommunity
+
+
 
 @enduml
